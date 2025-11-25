@@ -232,7 +232,7 @@ install_now(){
 	[ ! -L "/opt/etc/passwd" ] && ln -sf /etc/passwd /opt/etc/passwd && chmod 644 /opt/etc/passwd >/dev/null 2>&1
 	[ ! -L "/opt/etc/group" ] && ln -sf /etc/group /opt/etc/group && chmod 644 /opt/etc/group >/dev/null 2>&1
 	grep -q '^nobody:' /etc/passwd || echo 'nobody:x:65534:65534:nobody:/dev/null:/dev/null' >> /etc/passwd >/dev/null 2>&1
-	grep -q '^nobody:' /etc/group || echo 'nobody:*:65534:' >> /etc/group 2>/dev/null >/dev/null 2>&1
+	grep -q '^nobody:' /etc/group || echo 'nobody:*:65534:' >> /etc/group >/dev/null 2>&1
 
 	# make start up script link
 	echo_date "创建启动项..."
