@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <html xmlns:v>
 	<head>
@@ -8,7 +8,7 @@
 		<meta HTTP-EQUIV="Expires" CONTENT="-1">
 		<link rel="shortcut icon" href="images/favicon.png">
 		<link rel="icon" href="images/favicon.png">
-		<title>EasyTier</title>
+		<title>易分层</title>
 		<link rel="stylesheet" type="text/css" href="index_style.css" />
 		<link rel="stylesheet" type="text/css" href="form_style.css" />
 		<link rel="stylesheet" type="text/css" href="usp_style.css" />
@@ -23,8 +23,8 @@
 		<script type="text/javascript" language="JavaScript" src="/client_function.js"></script>
 		<script type="text/javascript" src="/res/softcenter.js"></script>
 		<style>
-			input[type=button]:focus {
-				outline: none;
+			输入框聚焦时 {
+				轮廓：无；
 			}
 		</style>
 		<script>
@@ -263,9 +263,10 @@
 															</td>
 														</tr>
 														<tr id="user_id" style="display:none;">
-															<th style="cursor:help;" title="用户名需注册后再进行关联">设置关联用户</th>
+															<th style="cursor:help;" title="用户名需注册后再进行关联,连接私有Web控制台请输入udp://host:port/user格式">设置关联用户</th>
 															<td>
-																<input type="text" class="input_ss_table" id="easytier_id" placeholder="用户名" maxlength="16" onkeypress="javascript:event.returnValue=((event.keyCode >= 48 && event.keyCode <= 57)||(event.keyCode >= 65 && event.keyCode <= 90)||(event.keyCode >= 97 && event.keyCode <= 122))?true:false;">
+																<!-- <input type="text" class="input_ss_table" id="easytier_id" placeholder="用户名" maxlength="16" onkeypress="javascript:event.returnValue=((event.keyCode >= 48 && event.keyCode <= 57)||(event.keyCode >= 65 && event.keyCode <= 90)||(event.keyCode >= 97 && event.keyCode <= 122))?true:false;" /> -->
+																<input type="text" class="input_ss_table" id="easytier_id" placeholder="用户名" />
 																<span style="padding-top:5px;margin-left:10px;margin-right:30px;">前往Web控制台<a target="_blank" href="https://easytier.cn/web#/auth/register"><em><u>注册</u></em></a>或<a target="_blank" href="https://easytier.cn/web"><em><u>配置组网</u></em></a></span>
 															</td>
 														</tr>
