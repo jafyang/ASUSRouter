@@ -7,7 +7,8 @@ eval $(dbus export easytier_)
 start_easytier(){ # 启动服务
 	if [ "${easytier_enable}" == "1" ]; then
 		[ "${easytier_watchdog}" == "1" ] && (cru a easytierTimer "*/1 * * * * /koolshare/scripts/easytier_config.sh scan") || (cru d easytierTimer) # 创建定时时钟任务
-		pidof easytier-core > /dev/null 2>&1 || /koolshare/bin/easytier-core -w ${easytier_id} --machine-id $(cat /sys/class/net/br0/address) & #启动后台进程
+		killall easytier-core > /dev/null 2>&1
+		/koolshare/bin/easytier-core -w ${easytier_id} --machine-id $(cat /sys/class/net/br0/address) & #启动后台进程
 		sleep 1
 		#iptables -C INPUT -p tcp --dport 11010 -j ACCEPT 2>/dev/null || iptables -t filter -I INPUT -p tcp --dport 11010 -j ACCEPT
 		#iptables -C INPUT -p udp --dport 11010 -j ACCEPT 2>/dev/null || iptables -t filter -I INPUT -p udp --dport 11010 -j ACCEPT
